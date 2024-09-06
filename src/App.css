@@ -1,38 +1,138 @@
-.App {
-  text-align: center;
+@font-face {
+  font-family: 'Monocraft';
+  src: url('./assets/fonts/minecraft.ttf');
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+html
+{
+  height: 100%;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+body
+{
+  background: -webkit-linear-gradient(330deg, #000000,#18b9a1,#44e6cf) no-repeat;
+  background: linear-gradient(330deg, #000000,#18b9a1,#44e6cf) no-repeat;
+  font-family: "Monocraft", sans-serif;
+  color: #000000;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+a{
+  font-size: 65px;
+  text-decoration: none;
+  color: #000000;
+  padding: 0 50px 0 50px;
+
+}
+
+a:visited
+{
+  text-decoration: none;
+  color: #000000;
+}
+
+.clicker{
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.clickerButton
+{
+  position: relative;
+  border: none;
+  outline: none;
+  width: 30vw;
+  cursor: none;
+  background: transparent;
+}
+
+button img
+{
+  cursor: pointer;
+  background: transparent;
+  outline: none;
+  width: 100%;
+}
+
+.clickerSpan
+{
+  font-size: 64px;
+  font-weight: bold;
+  width: max-content;
+  height: max-content;
+  text-align: center;
+  float: right;
+}
+
+.Card img
+{
+  width: 150px;
+}
+
+.cardSection
+{
+  display: flex;
+  flex-gap: 10px;
+  flex-direction: row;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
 }
 
-.App-link {
-  color: #61dafb;
+p{
+  font-size: 40px;
+  text-align: center;
+  margin: 0;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media screen and (max-width: 599px)
+{
+  .clickerButton
+  {
+    position: relative;
+    border: none;
+    outline: none;
+    width: 100%;
+    cursor: none;
+    background: transparent;
+    appearance: none;
   }
-  to {
-    transform: rotate(360deg);
+
+  button img
+  {
+    cursor: pointer;
+    background: transparent;
+    width: 100%;
+    -webkit-user-select: none; /* Для Safari */
+    user-select: none;
+    outline: none;
+    -webkit-appearance: none;
+  }
+
+  .Card img
+  {
+    width: 100px;
+  }
+
+  .cardSection
+  {
+    display: flex;
+    flex-gap: 10px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  p{
+    font-size: 36px;
+    text-align: center;
+    margin: 0;
+  }
+
+  a{
+    font-size: 48px;
+    text-decoration: none;
+    color: #000000;
+    padding: 0 50px 0 50px;
+
   }
 }
