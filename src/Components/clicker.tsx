@@ -1,21 +1,19 @@
-import {useState, useEffect} from "react";
+import React, {useState, useEffect} from "react";
 import {NavLink, useLocation} from "react-router-dom";
 import Drek from '../assets/btnbcg.png'
 import { Cookies } from 'react-cookie';
+import SoundButton from "./soundButton";
 
-const Clicker = () =>
-{
+const Clicker = () => {
+
     const cookies = new Cookies();
     let location = useLocation();
     const [count, setCount] = useState<number>(cookies?.get('count') || 0);
 
-    function countHandlerChange()
-    {
+    function countHandlerChange() {
         setTimeout(() => {
             setCount(count + 1);
-
         }, 0)
-
 
     }
 
@@ -26,8 +24,9 @@ const Clicker = () =>
 
     return (
         <>
-            <div style={{marginTop: 50}}>
+            <div className={"header"}>
                 <NavLink to="/shop">SHOP</NavLink>
+                <SoundButton />
             </div>
             <div className={"clicker"}>
                 <button onClick={countHandlerChange} className={"clickerButton"}><img src={Drek} alt="Tap me!"/></button>

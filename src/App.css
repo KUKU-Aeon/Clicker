@@ -20,8 +20,6 @@ a{
   font-size: 65px;
   text-decoration: none;
   color: #000000;
-  padding: 0 50px 0 50px;
-
 }
 
 a:visited
@@ -36,6 +34,14 @@ a:visited
   align-items: center;
 }
 
+.header
+{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 50px 50px 0 50px;
+}
+
 .clickerButton
 {
   position: relative;
@@ -43,6 +49,15 @@ a:visited
   outline: none;
   width: 30vw;
   cursor: none;
+  background: transparent;
+}
+
+.soundButton
+{
+  border: none;
+  outline: none;
+  width: 60px;
+  cursor: pointer;
   background: transparent;
 }
 
@@ -84,7 +99,7 @@ p{
   margin: 0;
 }
 
-@media screen and (max-width: 599px)
+@media screen and (max-width: 799px)
 {
   .clickerButton
   {
@@ -132,7 +147,22 @@ p{
     font-size: 48px;
     text-decoration: none;
     color: #000000;
-    padding: 0 50px 0 50px;
 
+  }
+
+{
+  border: none;
+  outline: none;
+  width: 30px;
+  cursor: pointer;
+  background: transparent;
+}
+
+  .header
+  {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 25px 25px 0 25px;
   }
 }

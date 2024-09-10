@@ -1,7 +1,9 @@
 
 import img from '../assets/Friendmini.png'
 import Isaac from  '../assets/Isacccryingbad.png'
-const shopTheme = require('../assets/music.mp3');
+import {NavLink} from "react-router-dom";
+import SoundButton from "./soundButton";
+
 
 
 
@@ -22,12 +24,18 @@ const WBMONSTR = () :ShopItem[] =>
     ]
 }
 
+
+
 function ShopItems()
 {
     const bonuses = WBMONSTR()
+
     return (
         <>
-            <audio src={shopTheme} autoPlay={true}></audio>
+            <div className={"header"}>
+                <NavLink to="/">Назад</NavLink>
+                <SoundButton />
+            </div>
             <div className={"cardSection"} style={{marginTop: 50}}>
             {bonuses.map((el :ShopItem) =>
                 <>
