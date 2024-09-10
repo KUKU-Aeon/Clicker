@@ -26,7 +26,7 @@ function SoundButton()
        {
            location.pathname === "/" ? audioPlayer.current.src = MainTheme : audioPlayer.current.src = ShopTheme;
        }
-    }, [location])
+    }, [location.pathname])
 
     function handleClick() {
         setIsMuted(!isMuted);
@@ -34,7 +34,7 @@ function SoundButton()
 
 
     return(<div>
-            <audio  autoPlay={true} ref={audioPlayer} loop={true}></audio>
+            <audio autoPlay={true} ref={audioPlayer} loop={true}></audio>
             <button onClick={handleClick} className={"soundButton"}><img src="" alt="" ref={button} /></button>
         </div>
     )
