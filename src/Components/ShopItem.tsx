@@ -9,6 +9,7 @@ import SoundButton from "./soundButton";
 
 interface ShopItem
 {
+    id: number
     name: string;
     bust: number;
     imgSrc: string;
@@ -18,9 +19,9 @@ interface ShopItem
 const WBMONSTR = () :ShopItem[] =>
 {
     return [
-        {name: "Друг бездельник", bust: 2, imgSrc: img, purchased: "no"},
-        {name: "Друг бездельник", bust: 2, imgSrc: img, purchased: "no"},
-        {name: "Друг бездельник", bust: 2, imgSrc: img, purchased: "no"},
+        {id: 1, name: "Друг бездельник", bust: 2, imgSrc: img, purchased: "no"},
+        {id: 2, name: "Друг бездельник", bust: 2, imgSrc: img, purchased: "no"},
+        {id: 3, name: "Друг бездельник", bust: 2, imgSrc: img, purchased: "no"},
     ]
 }
 
@@ -33,14 +34,14 @@ function ShopItems()
     return (
         <>
             <div className={"header"}>
-                <NavLink to="/">Назад</NavLink>
+                <NavLink to="/clicker">Назад</NavLink>
                 <SoundButton />
             </div>
             <div className={"cardSection"} style={{marginTop: 50}}>
             {bonuses.map((el :ShopItem) =>
                 <>
-                    <div className={"Card"}>
-                        <img src={el.imgSrc} alt={el.name}/>
+                    <div className={"Card"} key={el.id}>
+                        <img src={el.imgSrc} alt={el.name} key={el.imgSrc}/>
                     </div>
                 </>
             )}
