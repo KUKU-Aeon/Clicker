@@ -1,12 +1,14 @@
 import React, {useState, useEffect, useRef} from "react";
 import {NavLink, useLocation} from "react-router-dom";
 import { Cookies } from 'react-cookie';
-import Drek from '../assets/btnbcg.png'
+import Drek from '../assets/nobg.gif'
 import SoundButton from "./soundButton";
+import {Animate} from "react-simple-animate";
 
 const Clicker = () => {
 
     const cookies = new Cookies();
+    const name: string = 'Мимик';
     const maxHealth: number = 1000;
     let location = useLocation();
     const healthBar = useRef<HTMLProgressElement>(null);
@@ -53,14 +55,24 @@ const Clicker = () => {
     return (
         <>
             <div className={"header"}>
-                <NavLink to="/shop">SHOP</NavLink>
+                <NavLink to="/shop">ЛАВКА</NavLink>
                 <SoundButton />
             </div>
-            <div className={"clicker"}>
-                <button onClick={countHandlerChange} className={"clickerButton"}><img src={Drek} alt="Tap me!"/></button>
-                <progress value={(count/maxHealth)*100}  max={100} ref={healthBar} />
-                <div className={'clickerSpan'}>{count}</div>
-            </div>
+
+            <Animate
+                play={true}
+                start={{ opacity: 0, filter: 'blur(10px)' }}
+                end={{ opacity: 1, filter: 'blur(0)' }}
+                duration={1.5}
+            >
+                <div className={"clicker"}>
+                    <button onClick={countHandlerChange} className={"clickerButton"}><img src={Drek} alt="Tap me!" style={{background: "transparent"}}/></button>
+                    <h2>{name}</h2>
+                    <progress value={(count/maxHealth)*100}  max={100} ref={healthBar} />
+                    <div className={'clickerSpan'}>{count}</div>
+                </div>
+            </Animate>
+
         </>
     )
 }

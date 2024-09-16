@@ -4,7 +4,7 @@ import mute from "../assets/mute.png";
 import unmute from "../assets/unmute.png";
 
 const ShopTheme = require('../assets/music.mp3');
-const MainTheme = require('../assets/WIR8AM.mp3');
+const MainTheme = require('../assets/The Decisive Combat.mp3');
 function SoundButton()
 {
     const audioPlayer = useRef<HTMLAudioElement>(null);
@@ -34,7 +34,7 @@ function SoundButton()
 
 
     return(<div>
-            <audio autoPlay={false} ref={audioPlayer} loop={true}></audio>
+            <audio autoPlay={true} ref={audioPlayer} loop={true}></audio>
             <button onClick={handleClick} className={"soundButton"}><img src="" alt="" ref={button} /></button>
         </div>
     )

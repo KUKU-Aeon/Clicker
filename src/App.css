@@ -1,11 +1,16 @@
 @font-face {
-  font-family: 'Monocraft';
-  src: url('./assets/fonts/minecraft.ttf');
+  font-family: 'Pixel Font Filled';
+  src: url('./assets/fonts/Sonic 1 Title Screen Filled.ttf');
 }
 
-html
-{
+@font-face {
+  font-family: 'Pixel Font Outline';
+  src: url('./assets/fonts/Sonic 1 Title Screen Outline.ttf');
+}
+
+html, body {
   height: 100%;
+  width: 100%;
 }
 
 *{
@@ -14,22 +19,22 @@ html
 
 body
 {
-  background: -webkit-linear-gradient(330deg, #000000,#18b9a1,#44e6cf) no-repeat;
-  background: linear-gradient(330deg, #000000,#18b9a1,#44e6cf) no-repeat;
-  font-family: "Monocraft", sans-serif;
+  background: linear-gradient(0deg, rgba(0,0,0,1) 11%, rgba(195,8,8,1) 32%, rgba(0,0,0,1) 74%) no-repeat;
+  font-family: "Pixel Font Filled", sans-serif;
   color: #000000;
+  height: max-content;
 }
 
 a{
   font-size: 65px;
   text-decoration: none;
-  color: #000000;
+  color: #FFFFFF;
 }
 
 a:visited
 {
   text-decoration: none;
-  color: #000000;
+  color: #FFFFFF;
 }
 
 .clicker{
@@ -43,7 +48,7 @@ a:visited
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  margin: 50px 50px 0 50px;
+  margin: 0 50px 0 50px;
 }
 
 .clickerButton
@@ -51,7 +56,7 @@ a:visited
   position: relative;
   border: none;
   outline: none;
-  width: 30vw;
+  width: 25vw;
   cursor: none;
   background: transparent;
 }
@@ -78,6 +83,7 @@ button img
   border: none !important;
   appearance: none !important;
   width: 100%;
+  color: #FFFFFF;
 }
 
 .clickerSpan
@@ -88,6 +94,8 @@ button img
   height: max-content;
   text-align: center;
   float: right;
+  color: #FFFFFF;
+  font-family: "Pixel Font Outline", sans-serif;
 }
 
 .Card img
@@ -119,13 +127,29 @@ p{
   justify-content: center;
 }
 
-.main_menu h1
+.main_menu a
 {
+  color: #000000;
+}
+
+.main_menu h1{
   font-size: 84px;
+  font-family: 'Pixel Font Outline' , sans-serif;
+  letter-spacing: 5px;
+  color: #FFFFFF;
+}
+
+h2
+{
+  font-family: 'Pixel Font Outline' , sans-serif;
+  margin: 0;
+  font-size: 24px;
+  font-style: italic;
+  font-weight: bold;
 }
 
 .main_menu_button {
-  font-family: "Monocraft", sans-serif;
+  font-family: "Pixel Font Filled", sans-serif;
   outline: none;
   border-radius: 10px;
   width: max-content;
@@ -208,7 +232,7 @@ progress::-webkit-progress-bar
   }
 
   p{
-    font-size: 36px;
+    font-size: 24px;
     text-align: center;
     margin: 0;
   }
@@ -238,6 +262,10 @@ progress::-webkit-progress-bar
 
   .main_menu h1
   {
-    font-size: 64px;
+    font-family: 'Pixel Font Outline' , sans-serif;
+    font-size: 48px;
+    text-align: center;
+    color: #FFFFFF;
+    letter-spacing: 2px;
   }
 }
