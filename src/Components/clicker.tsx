@@ -1,37 +1,38 @@
-import React, {useState, useEffect, useRef} from "react";
+import React, {useEffect, useRef} from "react";
 import {NavLink, useLocation} from "react-router-dom";
-import { Cookies } from 'react-cookie';
-import Drek from '../assets/nobg.gif'
+import {useDispatch, useSelector} from "react-redux";
+import * as actions from "../store/actions";
+import {cookies} from "../Cookies";
+import Drek from '../assets/nobg.gif';
+import Coin from '../assets/coin.png';
 import SoundButton from "./soundButton";
 import {Animate} from "react-simple-animate";
+import {Data} from "../store/actionsType";
 
 const Clicker = () => {
+    const dispatch = useDispatch<any>();
+    const Storage: Data = useSelector((state: Data) => state);
 
-    const cookies = new Cookies();
-    const name: string = 'Мимик';
-    const maxHealth: number = 1000;
+    const name: string = 'Великий мимик, Drake__Reserve';
+    const maxHealth: number = 100000;
     let location = useLocation();
     const healthBar = useRef<HTMLProgressElement>(null);
-    const [count, setCount] = useState<number>(cookies?.get('count') || maxHealth);
 
     function countHandlerChange() {
         setTimeout(() => {
-            setCount(count - 10);
+            dispatch(actions.dealDMG(10));
+            dispatch(actions.addCoin(10));
         }, 0)
 
     }
 
+
     useEffect(() =>
     {
-       if ((count - 10) <= 0)
-       {
-           setCount(maxHealth);
-           cookies.set('count', maxHealth, {path: '/clicker'})
-       }
+        cookies.set('Storage', Storage, { path: '/clicker' , maxAge: Number.MAX_SAFE_INTEGER});
+        console.log(Storage, cookies.get('Storage'))
 
-        cookies.set('count', count, {path: '/clicker'})
-
-    },[location.pathname, count])
+    },[Storage.DMG])
 
 
     useEffect(() => {
@@ -50,7 +51,7 @@ const Clicker = () => {
                 healthBar.current.className = 'red'
             }
         }
-    }, [count])
+    }, [Storage.DMG])
 
     return (
         <>
@@ -68,8 +69,9 @@ const Clicker = () => {
                 <div className={"clicker"}>
                     <button onClick={countHandlerChange} className={"clickerButton"}><img src={Drek} alt="Tap me!" style={{background: "transparent"}}/></button>
                     <h2>{name}</h2>
-                    <progress value={(count/maxHealth)*100}  max={100} ref={healthBar} />
-                    <div className={'clickerSpan'}>{count}</div>
+                    <progress value={((maxHealth - Storage.DMG)/maxHealth)*100}  max={100} ref={healthBar} />
+                    <div className={'clickerSpan'}>{maxHealth - Storage.DMG}</div>
+                    <div className={'clickerSpan'}>{Storage.coins}<img src={Coin} alt="coin" style={{width: 50}}/></div>
                 </div>
             </Animate>
 

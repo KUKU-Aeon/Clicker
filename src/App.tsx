@@ -5,6 +5,7 @@ import Menu from "./Components/menu"
 import Clicker from "./Components/clicker";
 import Shop from "./Components/Shop"
 
+
 function App() {
   return (
       <Router>
