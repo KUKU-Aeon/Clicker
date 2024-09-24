@@ -20,6 +20,7 @@ html, body {
 #root
 {
   height: 100%;
+  text-align: center;
 }
 
 body
@@ -102,6 +103,7 @@ button img
   float: right;
   color: #FFFFFF;
   font-family: "Pixel Font Outline", sans-serif;
+  letter-spacing: 5px;
 }
 
 .Card img
@@ -111,17 +113,61 @@ button img
 
 .cardSection
 {
+  width: 100%;
   display: flex;
-  flex-gap: 10px;
+  gap: 50px;
   flex-direction: row;
-  justify-content: center;
+  justify-content:space-around;
   align-items: center;
+  margin-bottom: 20px;
+}
+
+.Card
+{
+  width: 250px;
 }
 
 p{
-  font-size: 40px;
+  font-size: 20px;
   text-align: center;
+  text-shadow: 1px 1px #FFFFFF;
   margin: 0;
+}
+
+.shop
+{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-shadow: 1px 1px #FFFFFF;
+}
+
+.stash
+{
+  font-size: 48px;
+  width: max-content;
+  color: #000000;
+  font-family: "Pixel Font Filled", sans-serif;
+}
+
+.cardButton
+{
+  outline: none;
+  border: none;
+  border-radius: 10px;
+  font-family: "Pixel Font Filled", sans-serif;
+  text-shadow: 1px 1px #FFFFFF;
+  width: 100%;
+  margin:5px 0;
+  cursor: pointer;
+  box-shadow: 5px 5px 2px #000000;
+  transition: 0.1s;
+}
+
+.cardButton:active
+{
+  box-shadow: none;
 }
 
 .main_menu
@@ -290,5 +336,18 @@ progress::-webkit-progress-bar
     position: relative;
     z-index: -1;
     bottom: 0;
+  }
+
+  .clickerSpan
+  {
+    font-size: 48px;
+    font-weight: bold;
+    width: max-content;
+    height: max-content;
+    text-align: center;
+    float: right;
+    color: #FFFFFF;
+    font-family: "Pixel Font Outline", sans-serif;
+    letter-spacing: 5px;
   }
 }

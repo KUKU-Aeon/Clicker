@@ -11,7 +11,6 @@ const init: Data = {
 
 const getInitialValue = (): Data => {
     const value = cookies.get('Storage')
-    console.log(value, cookies.get('Storage'))
     return value ? value : init;
 };
 

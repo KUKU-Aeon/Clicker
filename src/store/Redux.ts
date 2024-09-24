@@ -28,7 +28,7 @@ export default function reducer(state: Data | undefined, action: DeviceAction): 
         case actions.COIN_REMOVE:
             return { ...state, coins: state.coins - action.payload }
         case actions.TRINKET_ADD:
-               return {...state, Trinkets: [...state.Trinkets, action.payload]}
+                return {...state, Trinkets: [...state.Trinkets, action.payload]}
         default:
             return state;
     }

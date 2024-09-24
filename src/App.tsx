@@ -6,7 +6,7 @@ import Clicker from "./Components/clicker";
 import Shop from "./Components/Shop"
 import { Cookies } from 'react-cookie';
 
-export  const cookies = new Cookies();
+export const cookies = new Cookies();
 
 function App() {
   return (

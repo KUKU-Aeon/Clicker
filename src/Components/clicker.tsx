@@ -1,4 +1,4 @@
-import React, {useEffect, useRef} from "react";
+import React, {useEffect, useRef, useMemo} from "react";
 import {NavLink} from "react-router-dom";
 import {useDispatch, useSelector} from "react-redux";
 import * as actions from "../store/actions";
@@ -17,9 +17,14 @@ const Clicker = () => {
     const maxHealth: number = 100000;
     const healthBar = useRef<HTMLProgressElement>(null);
 
+    const buster = useMemo( () => {
+        return Storage.Trinkets.reduce((curr, el) => curr * el.bust, 1);
+    }, [Storage.Trinkets])
+
     function countHandlerChange() {
+
         setTimeout(() => {
-            dispatch(actions.dealDMG(1000));
+            dispatch(actions.dealDMG(10 * buster));
             dispatch(actions.addCoin(10));
         }, 0)
 
@@ -30,6 +35,7 @@ const Clicker = () => {
         if (maxHealth - Storage.DMG <= 0)
         {
             dispatch(actions.restore());
+            dispatch(actions.addCoin(500))
             cookies.set('Storage', Storage, { path: '/' , maxAge: Number.MAX_SAFE_INTEGER});
         }
 
