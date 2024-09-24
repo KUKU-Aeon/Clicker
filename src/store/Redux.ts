@@ -21,6 +21,8 @@ export default function reducer(state: Data | undefined, action: DeviceAction): 
     switch (action.type) {
         case actions.DMG_ADD:
             return { ...state, DMG: state.DMG + action.payload }
+        case actions.RESTORE:
+            return { ...state, DMG: state.DMG = 0}
         case actions.COIN_ADD:
             return { ...state, coins: state.coins + action.payload }
         case actions.COIN_REMOVE:

@@ -10,6 +10,10 @@ export const addCoin = (elem: number) => ({
     payload: elem
 })
 
+export const restore = () => ({
+    type: actions.RESTORE,
+})
+
 export const removeCoins = (elem: number) => ({
     type: actions.COIN_REMOVE,
     payload: elem

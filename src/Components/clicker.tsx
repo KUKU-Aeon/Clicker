@@ -1,8 +1,8 @@
 import React, {useEffect, useRef} from "react";
-import {NavLink, useLocation} from "react-router-dom";
+import {NavLink} from "react-router-dom";
 import {useDispatch, useSelector} from "react-redux";
 import * as actions from "../store/actions";
-import {cookies} from "../Cookies";
+import {cookies} from "../App";
 import Drek from '../assets/nobg.gif';
 import Coin from '../assets/coin.png';
 import SoundButton from "./soundButton";
@@ -15,22 +15,25 @@ const Clicker = () => {
 
     const name: string = 'Великий мимик, Drake__Reserve';
     const maxHealth: number = 100000;
-    let location = useLocation();
     const healthBar = useRef<HTMLProgressElement>(null);
 
     function countHandlerChange() {
         setTimeout(() => {
-            dispatch(actions.dealDMG(10));
+            dispatch(actions.dealDMG(1000));
             dispatch(actions.addCoin(10));
         }, 0)
 
     }
 
-
     useEffect(() =>
     {
-        cookies.set('Storage', Storage, { path: '/clicker' , maxAge: Number.MAX_SAFE_INTEGER});
-        console.log(Storage, cookies.get('Storage'))
+        if (maxHealth - Storage.DMG <= 0)
+        {
+            dispatch(actions.restore());
+            cookies.set('Storage', Storage, { path: '/' , maxAge: Number.MAX_SAFE_INTEGER});
+        }
+
+        cookies.set('Storage', Storage, { path: '/' , maxAge: Number.MAX_SAFE_INTEGER});
 
     },[Storage.DMG])
 

@@ -1,7 +1,7 @@
 import { createStore } from 'redux';
 import reducer from "./Redux";
 import {Data} from "./actionsType";
-import {cookies} from '../Cookies'
+import {cookies} from '../App'
 
 const init: Data = {
     DMG: 0,
@@ -10,8 +10,8 @@ const init: Data = {
 }
 
 const getInitialValue = (): Data => {
-    const value = cookies?.get('Storage')
-    console.log(value)
+    const value = cookies.get('Storage')
+    console.log(value, cookies.get('Storage'))
     return value ? value : init;
 };
 
