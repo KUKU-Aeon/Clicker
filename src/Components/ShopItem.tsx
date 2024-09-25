@@ -97,9 +97,9 @@ function ShopItems()
                         <>
                             <div className={"Card"} key={el.id}>
                                 <img src={el.imgSrc} alt={el.name} key={el.imgSrc}/>
-                                <p style={{fontSize: 16}}>{el.name}</p>
-                                <p style={{fontSize: 10}}>множитель урона Х{el.bust}</p>
-                                <p>{el.price} <img src={Coin} alt="coin" style={{width: 25}}/></p>
+                                <p style={{fontSize: 16}} key={el.name}>{el.name}</p>
+                                <p style={{fontSize: 10}} key={el.bust}>множитель урона Х{el.bust}</p>
+                                <p key={el.price}>{el.price} <img src={Coin} alt="coin" style={{width: 25}} /></p>
                                 <button onClick={() => {setPurchased(el)}} className={"cardButton"} disabled={findTrinket(el)}>{findTrinket(el) ? "Спутник уже с вами!" : "Призвать"}</button>
                             </div>
                         </>

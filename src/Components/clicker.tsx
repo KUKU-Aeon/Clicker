@@ -77,9 +77,9 @@ const Clicker = () => {
             >
                 <div className={"clicker"}>
                     <button onClick={countHandlerChange} className={"clickerButton"}><img src={Drek} alt="Tap me!" style={{background: "transparent"}}/></button>
-                    <h2>{name}</h2>
-                    <progress value={((maxHealth - Storage.DMG)/maxHealth)*100}  max={100} ref={healthBar} />
                     <div className={'clickerSpan'}>{maxHealth - Storage.DMG}</div>
+                    <progress value={((maxHealth - Storage.DMG)/maxHealth)*100}  max={100} ref={healthBar} />
+                    <p style={{fontSize: 12}}>{name}</p>
                     <div className={'clickerSpan'}>{Storage.coins}<img src={Coin} alt="coin" style={{width: 50}}/></div>
                 </div>
             </Animate>

@@ -25,7 +25,7 @@ html, body {
 
 body
 {
-  background: linear-gradient(0deg, rgba(0,0,0,1) 11%, rgba(195,8,8,1) 32%, rgba(0,0,0,1) 74%) center;
+  background: linear-gradient(90deg, rgba(0,0,0,1) 11%, rgba(195,8,8,1) 32%, rgba(0,0,0,1) 91%) center;
   background-size: cover;
   font-family: "Pixel Font Filled", sans-serif;
   color: #000000;
@@ -77,9 +77,10 @@ a:visited
 {
   border: none;
   outline: none;
-  width: 60px;
+  width: 65px;
   cursor: pointer;
   background: transparent;
+  transition:1s;
 }
 
 button img
@@ -91,19 +92,28 @@ button img
   appearance: none !important;
   width: 100%;
   color: #FFFFFF;
+  transition: 1s;
 }
 
 .clickerSpan
 {
   font-size: 64px;
-  font-weight: bold;
   width: max-content;
   height: max-content;
   text-align: center;
   float: right;
   color: #FFFFFF;
-  font-family: "Pixel Font Outline", sans-serif;
-  letter-spacing: 5px;
+  text-shadow: 10px 10px #000000;
+  font-family: "Pixel Font Filled", sans-serif;
+  letter-spacing: 2px;
+}
+
+.Card
+{
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    background-color: rgba(195,8,8,0.35);
+    padding: 10px;
 }
 
 .Card img
@@ -147,7 +157,9 @@ p{
 {
   font-size: 48px;
   width: max-content;
-  color: #000000;
+  color: #FFFFFF;
+  text-shadow: 5px 5px #000000;
+  letter-spacing: 2px;
   font-family: "Pixel Font Filled", sans-serif;
 }
 
@@ -306,14 +318,6 @@ progress::-webkit-progress-bar
 
   }
 
-{
-  border: none;
-  outline: none;
-  width: 30px;
-  cursor: pointer;
-  background: transparent;
-}
-
   .header
   {
     display: flex;
@@ -340,14 +344,27 @@ progress::-webkit-progress-bar
 
   .clickerSpan
   {
-    font-size: 48px;
-    font-weight: bold;
+    font-size: 32px;
     width: max-content;
     height: max-content;
     text-align: center;
     float: right;
     color: #FFFFFF;
-    font-family: "Pixel Font Outline", sans-serif;
-    letter-spacing: 5px;
+    text-shadow: 5px 5px #000000;
+    font-family: "Pixel Font Filled", sans-serif;
+    letter-spacing: 2px;
   }
+
+  .cardButton:active
+  {
+    box-shadow: none;
+  }
+
+  progress
+  {
+
+    width: 70%;
+
+  }
+
 }

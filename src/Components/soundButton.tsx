@@ -1,7 +1,7 @@
 import React, {useEffect, useRef, useState} from "react";
 import {useLocation} from "react-router-dom";
-import mute from "../assets/mute.png";
-import unmute from "../assets/unmute.png";
+import mute from "../assets/mute.svg";
+import unmute from "../assets/unmute.svg";
 
 const ShopTheme = require('../assets/music.mp3');
 const MainTheme = require('../assets/The Decisive Combat.mp3');
@@ -33,7 +33,7 @@ function SoundButton()
     }
 
 
-    return(<div>
+    return(<div style={{display: "flex"}}>
             <audio autoPlay={true} ref={audioPlayer} loop={true}></audio>
             <button onClick={handleClick} className={"soundButton"}><img src="" alt="" ref={button} /></button>
         </div>
