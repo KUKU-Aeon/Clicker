@@ -25,7 +25,7 @@ html, body {
 
 body
 {
-  background: linear-gradient(90deg, rgba(0,0,0,1) 11%, rgba(195,8,8,1) 32%, rgba(0,0,0,1) 91%) center;
+  background: linear-gradient(90deg, rgba(0,0,0,1) 11%, rgba(9, 132, 227,1) 32%, rgba(0,0,0,1) 91%) center;
   background-size: cover;
   font-family: "Pixel Font Filled", sans-serif;
   color: #000000;
@@ -33,9 +33,10 @@ body
 }
 
 a{
-  font-size: 65px;
+  font-size: 48px;
   text-decoration: none;
   color: #FFFFFF;
+  text-shadow: 5px 5px #000000;
 }
 
 a:visited
@@ -48,6 +49,7 @@ a:visited
   display: flex;
   flex-direction: column;
   align-items: center;
+  --current-width: 100%;
 }
 
 .header
@@ -97,13 +99,13 @@ button img
 
 .clickerSpan
 {
-  font-size: 64px;
+  font-size: calc(var(--current-width) * 2.5);
   width: max-content;
   height: max-content;
   text-align: center;
   float: right;
   color: #FFFFFF;
-  text-shadow: 10px 10px #000000;
+  text-shadow: 5px 5px #000000;
   font-family: "Pixel Font Filled", sans-serif;
   letter-spacing: 2px;
 }
@@ -112,7 +114,7 @@ button img
 {
     border: 1px solid rgba(0, 0, 0, 0.5);
     border-radius: 10px;
-    background-color: rgba(195,8,8,0.35);
+    background-color: rgba(9, 132, 227,0.35);
     padding: 10px;
 }
 
@@ -191,6 +193,7 @@ p{
   justify-content: center;
   height: 100%;
   overflow: hidden;
+  margin: 20vh 0;
 }
 
 .main_menu a
@@ -200,9 +203,10 @@ p{
 
 .main_menu h1{
   font-size: 84px;
-  font-family: 'Pixel Font Outline' , sans-serif;
-  letter-spacing: 5px;
+  font-family: 'Pixel Font Filled' , sans-serif;
+  letter-spacing: 10px;
   color: #FFFFFF;
+  text-shadow: 5px 5px #000000;
 }
 
 h2
@@ -221,6 +225,11 @@ h2
   border-radius: 10px;
   width: max-content;
   padding: 20px;
+}
+
+.main_menu_button a
+{
+  text-shadow: none;
 }
 
 .main_menu img {
@@ -299,7 +308,7 @@ progress::-webkit-progress-bar
   .cardSection
   {
     display: flex;
-    flex-gap: 10px;
+    gap: 20px;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -312,10 +321,8 @@ progress::-webkit-progress-bar
   }
 
   a{
-    font-size: 48px;
+    font-size:32px;
     text-decoration: none;
-    color: #000000;
-
   }
 
   .header
@@ -328,9 +335,10 @@ progress::-webkit-progress-bar
 
   .main_menu h1
   {
-    font-family: 'Pixel Font Outline' , sans-serif;
+    font-family: 'Pixel Font Filled' , sans-serif;
     font-size: 48px;
     text-align: center;
+    text-shadow: 5px 5px #000000;
     color: #FFFFFF;
     letter-spacing: 2px;
   }

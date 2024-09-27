@@ -8,14 +8,24 @@ import Coin from '../assets/coin.png';
 import SoundButton from "./soundButton";
 import {Animate} from "react-simple-animate";
 import {Data} from "../store/actionsType";
+import {useGlitch} from "react-powerglitch";
 
 const Clicker = () => {
     const dispatch = useDispatch<any>();
     const Storage: Data = useSelector((state: Data) => state);
 
-    const name: string = 'Великий мимик, Drake__Reserve';
-    const maxHealth: number = 100000;
+    const name: string = 'Великий мимик, Drake\u00A0Reserve';
+    const maxHealth: number = 1000000;
     const healthBar = useRef<HTMLProgressElement>(null);
+
+    const glitch = useGlitch({
+        "hideOverflow": true,
+        "timing": {
+        "duration": 3950,
+            "easing": "ease-in-out"
+    }
+
+    })
 
     const buster = useMemo( () => {
         return Storage.Trinkets.reduce((curr, el) => curr * el.bust, 1);
@@ -77,9 +87,9 @@ const Clicker = () => {
             >
                 <div className={"clicker"}>
                     <button onClick={countHandlerChange} className={"clickerButton"}><img src={Drek} alt="Tap me!" style={{background: "transparent"}}/></button>
-                    <div className={'clickerSpan'}>{maxHealth - Storage.DMG}</div>
-                    <progress value={((maxHealth - Storage.DMG)/maxHealth)*100}  max={100} ref={healthBar} />
-                    <p style={{fontSize: 12}}>{name}</p>
+                    <div className={'clickerSpan'} >{maxHealth - Storage.DMG}</div>
+                    <progress value={((maxHealth - Storage.DMG)/maxHealth)*100}  max={100} ref={healthBar}  />
+                    <p style={{fontSize: 16}} ref={glitch.ref}>{name}</p>
                     <div className={'clickerSpan'}>{Storage.coins}<img src={Coin} alt="coin" style={{width: 50}}/></div>
                 </div>
             </Animate>

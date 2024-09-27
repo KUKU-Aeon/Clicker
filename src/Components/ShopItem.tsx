@@ -7,7 +7,8 @@ import React, {useEffect, useRef, useState} from "react";
 import {AnimateKeyframes} from "react-simple-animate";
 
 import Coin from "../assets/coin.png";
-import Isaac from  '../assets/Isacccryingbad.png'
+import Isaac from  '../assets/cry.gif'
+import IsaacLove from  '../assets/love.gif'
 import img_1 from '../assets/Friendmini.png'
 import img_2 from '../assets/punchboy.png'
 import img_3 from '../assets/shade.png'
@@ -118,7 +119,7 @@ function ShopItems()
                     >{Storage.coins} <img src={Coin} alt="coin" style={{width: 50}}/>
                     </AnimateKeyframes>
                 </h1>
-                <img src={Isaac} alt="Айзек" style={{ maxWidth: '100%', display: 'block', margin: 'auto' }}/>
+                <img src={Storage.Trinkets.length === 0 ? Isaac : IsaacLove} alt="Айзек" style={{ maxWidth: '250px', maxHeight: '150px' ,display: 'block', margin: 'auto', background: "radial-gradient(ellipse, rgba(255,255,255,1) 40%, rgba(0,0,0,0) 70%)"}}/>
             </div>
         </>
     )
