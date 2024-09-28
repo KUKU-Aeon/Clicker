@@ -116,7 +116,7 @@ function ShopItems()
                             { 100: 'transform: translateX(0)' }
                         ]}
                         duration={0.1}
-                    >{Storage.coins} <img src={Coin} alt="coin" style={{width: 50}}/>
+                    >{Storage.coins} <img src={Coin} alt="coin" style={{minWidth: 40}}/>
                     </AnimateKeyframes>
                 </h1>
                 <img src={Storage.Trinkets.length === 0 ? Isaac : IsaacLove} alt="Айзек" style={{ maxWidth: '250px', maxHeight: '150px' ,display: 'block', margin: 'auto', background: "radial-gradient(ellipse, rgba(255,255,255,1) 40%, rgba(0,0,0,0) 70%)"}}/>

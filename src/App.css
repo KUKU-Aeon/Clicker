@@ -116,6 +116,8 @@ button img
     border-radius: 10px;
     background-color: rgba(9, 132, 227,0.35);
     padding: 10px;
+    width: 250px;
+    height: 265px;
 }
 
 .Card img
@@ -134,10 +136,6 @@ button img
   margin-bottom: 20px;
 }
 
-.Card
-{
-  width: 250px;
-}
 
 p{
   font-size: 20px;
@@ -175,13 +173,13 @@ p{
   width: 100%;
   margin:5px 0;
   cursor: pointer;
-  box-shadow: 5px 5px 2px #000000;
-  transition: 0.1s;
+  border-bottom: 5px solid #000000;
+  transition: 0.5s;
 }
 
 .cardButton:active
 {
-  box-shadow: none;
+  border: none;
 }
 
 .main_menu
@@ -276,6 +274,12 @@ progress::-webkit-progress-bar
 
 @media screen and (max-width: 799px)
 {
+
+  .Card
+  {
+    height: 220px;
+  }
+
   .clickerButton
   {
     position: relative;
@@ -366,6 +370,16 @@ progress::-webkit-progress-bar
   .cardButton:active
   {
     box-shadow: none;
+  }
+
+  .stash
+  {
+    font-size: 32px;
+    width: max-content;
+    color: #FFFFFF;
+    text-shadow: 5px 5px #000000;
+    letter-spacing: 2px;
+    font-family: "Pixel Font Filled", sans-serif;
   }
 
   progress
